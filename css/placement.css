@@ -1,0 +1,22 @@
+/* Stage 16 H1b: decor placement bar (touch-first, 360x640 up to desktop) */
+#tv-place { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 0 8px calc(10px + env(safe-area-inset-bottom, 0px)); pointer-events: none; }
+#tv-place[hidden] { display: none; }
+#tv-place .pl-hint { max-width: 520px; padding: 8px 14px; border: 3px solid #8c5a34; border-radius: 14px; background: #fff1d0; color: #5a3a1e; font-weight: 800; font-size: 14px; text-align: center; box-shadow: 0 3px 0 #8c5a34; }
+#tv-place .pl-hint.bad { background: #ffd9cf; color: #9a3320; }
+#tv-place .pl-bar { display: flex; gap: 8px; width: 100%; max-width: 520px; pointer-events: auto; }
+#tv-place .pl-btn { flex: 1; min-width: 64px; min-height: 60px; padding: 4px 6px; border: 3px solid #8c5a34; border-radius: 16px; background: #ffd166; color: #5a3a1e; font: inherit; font-weight: 800; font-size: 22px; line-height: 1; box-shadow: 0 4px 0 #8c5a34; cursor: pointer; touch-action: manipulation; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+#tv-place .pl-btn span { font-size: 12px; }
+#tv-place .pl-btn.ok { background: #9be08f; }
+#tv-place .pl-btn.no { background: #f5b7a5; }
+#tv-place .pl-btn:active { transform: translateY(2px) scale(.96); box-shadow: 0 2px 0 #8c5a34; }
+#tv-place .pl-btn:disabled { opacity: .5; filter: grayscale(.5); }
+body.pl-on #tv-joy, body.pl-on .tv-joy-float, body.pl-on .tv-joy-fixed { display: none !important; }
+@media (max-width: 380px) { #tv-place .pl-hint { font-size: 13px; } #tv-place .pl-btn span { font-size: 11px; } }
+
+#tv-place, #tv-place * { font-family: var(--font-ui); }
+
+/* Stage 17 DECOR a: decor inventory tabs */
+.tv-furn .pl-tabs { display: flex; gap: 8px; margin: 0 0 8px; }
+.tv-furn .pl-tab { flex: 1; min-height: 44px; border: 3px solid #8c5a34; border-radius: 14px; background: #f1e1b8; color: #5a3a1e; font: inherit; font-weight: 800; font-size: 15px; cursor: pointer; opacity: .75; }
+.tv-furn .pl-tab.on { background: #ffd166; opacity: 1; box-shadow: 0 3px 0 #8c5a34; }
+.tv-furn .pl-tabhint { margin: 0 0 8px; font-size: 13px; color: #8a6a44; }

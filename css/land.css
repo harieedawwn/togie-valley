@@ -1,0 +1,25 @@
+/* Togie Valley - land.css (Stage 16 G1): Phòng Địa Ốc panel. Mobile-first, touch targets >= 52px. */
+.tv-land h2 { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.tv-land h2 .gold { display: inline-flex; align-items: center; gap: 4px; font-size: 16px; }
+.tv-land .land-tabs { display: flex; gap: 8px; margin-bottom: 10px; }
+.tv-land .land-btn { min-height: 52px; padding: 8px 14px; border: 3px solid #8c5a34; border-radius: 14px; background: #ffd166; color: #5a3a1e; font: inherit; font-weight: 800; font-size: 16px; box-shadow: 0 3px 0 #8c5a34; cursor: pointer; transition: transform .12s; }
+.tv-land .land-btn:active { transform: scale(.94); }
+.tv-land .land-btn.tab { flex: 1; background: #fff1d0; }
+.tv-land .land-btn.tab.on { background: #ffd166; }
+.tv-land .land-btn.poor { background: #e6d7b5; color: #8a7757; }
+.tv-land .land-list { display: flex; flex-direction: column; gap: 10px; max-height: min(calc(52 * var(--uvh, 1vh)), 420px); overflow-y: auto; padding: 2px; -webkit-overflow-scrolling: touch; }
+.tv-land .land-cur { font-size: 15px; padding: 2px 4px; }
+.tv-land .land-card { display: flex; flex-direction: column; gap: 6px; padding: 12px; border: 3px solid #8c5a34; border-radius: 16px; background: #fff7e0; box-shadow: 0 3px 0 rgba(140, 90, 52, .35); }
+.tv-land .land-card.owned { background: #e6f3d3; }
+.tv-land .land-card.locked { opacity: .72; background: #efe4c8; }
+.tv-land .land-top { display: flex; align-items: center; gap: 10px; }
+.tv-land .land-no { flex: none; width: 38px; height: 38px; border-radius: 50%; background: #c98b4f; color: #fff1d0; font-weight: 800; font-size: 20px; display: flex; align-items: center; justify-content: center; }
+.tv-land .land-name { font-weight: 800; font-size: 18px; }
+.tv-land .land-desc, .tv-land .land-req { font-size: 14px; line-height: 1.35; }
+.tv-land .land-req.bad { color: #b3452f; font-weight: 700; }
+.tv-land .land-cost { display: flex; align-items: center; gap: 6px; font-size: 24px; }
+.tv-land .land-cost b { font-size: 28px; }
+.tv-land .land-badge { align-self: flex-start; padding: 6px 12px; border-radius: 12px; font-weight: 800; font-size: 14px; background: #ffd166; }
+.tv-land .land-badge.ok { background: #8fd18a; }
+.tv-land .land-badge.lock { background: #d6c9a8; color: #6b5a3a; }
+.tv-land .land-card.soon { align-items: flex-start; }

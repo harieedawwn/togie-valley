@@ -1,0 +1,11 @@
+CONTRACT.md
+STATE.md
+icons/src/candidates.png
+icons/src/character.png
+icons/src/character_mask.png
+index.html
+js/version.js
+sw.js
+tools/render_icon_character.js
+tools/render_icon_character.py
+version.json

@@ -1,0 +1,29 @@
+/* Togie Valley - furniture.css (Stage 16 H1a): Tiệm nội thất shop now uses Kit.panel (stage 27); these .furn-* rules still style the Placement (Trang trí) panel. Mobile-first (360x640), touch targets >= 48px. */
+.tv-furn h2 { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.tv-furn h2 .gold { display: inline-flex; align-items: center; gap: 4px; font-size: 16px; }
+.tv-furn .furn-btn { min-height: 48px; padding: 6px 12px; border: 3px solid #8c5a34; border-radius: 14px; background: #ffd166; color: #5a3a1e; font: inherit; font-weight: 800; font-size: 15px; box-shadow: 0 3px 0 #8c5a34; cursor: pointer; transition: transform .12s; white-space: nowrap; }
+.tv-furn .furn-btn:active { transform: scale(.94); }
+.tv-furn .furn-prev { display: flex; align-items: center; gap: 10px; padding: 8px; margin-bottom: 8px; border: 3px solid #8c5a34; border-radius: 16px; background: #fff7e0; }
+.tv-furn .furn-ico { flex: none; width: 84px; height: 84px; display: flex; align-items: center; justify-content: center; border-radius: 14px; background: #f1e1b8; }
+.tv-furn .furn-ico svg { width: 80px; height: 80px; }
+.tv-furn .furn-info { flex: 1; min-width: 0; }
+.tv-furn .furn-name { font-weight: 800; font-size: 17px; line-height: 1.2; }
+.tv-furn .furn-tip { font-size: 13px; line-height: 1.3; margin: 2px 0; }
+.tv-furn .furn-meta { font-size: 12px; color: #7a5a3a; }
+.tv-furn .furn-btn.buy { flex: none; display: flex; flex-direction: column; align-items: center; gap: 0; min-width: 72px; background: #8fd18a; line-height: 1.1; }
+.tv-furn .furn-btn.buy b { font-size: 17px; }
+.tv-furn .furn-btn.buy.poor { background: #e6d7b5; color: #8a7757; }
+.tv-furn .furn-tabs { display: flex; gap: 6px; overflow-x: auto; padding: 2px 2px 6px; margin-bottom: 4px; -webkit-overflow-scrolling: touch; }
+.tv-furn .furn-btn.tab { background: #fff1d0; flex: none; }
+.tv-furn .furn-btn.tab.on { background: #ffd166; }
+.tv-furn .furn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; max-height: min(calc(36 * var(--uvh, 1vh)), 300px); overflow-y: auto; padding: 2px; -webkit-overflow-scrolling: touch; }
+.tv-furn .furn-card { position: relative; display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 6px 2px 5px; border: 3px solid #8c5a34; border-radius: 14px; background: #fff7e0; color: #5a3a1e; font: inherit; cursor: pointer; min-height: 104px; transition: transform .12s; }
+.tv-furn .furn-card:active { transform: scale(.94); }
+.tv-furn .furn-card.on { background: #ffe9a8; box-shadow: 0 0 0 3px #ffd166; }
+.tv-furn .furn-card.poor .furn-cp { color: #b3452f; }
+.tv-furn .furn-ci { width: 56px; height: 56px; }
+.tv-furn .furn-cn { font-weight: 700; font-size: 12px; line-height: 1.15; text-align: center; }
+.tv-furn .furn-cp { display: flex; align-items: center; gap: 2px; font-size: 13px; font-weight: 800; }
+.tv-furn .furn-own { position: absolute; top: 2px; right: 4px; font-size: 11px; font-weight: 800; background: #8fd18a; border-radius: 8px; padding: 0 5px; }
+@media (min-width: 700px) { .tv-furn .furn-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-height: 420px) { .tv-furn .furn-ico { width: 56px; height: 56px; } .tv-furn .furn-ico svg { width: 52px; height: 52px; } .tv-furn .furn-grid { max-height: calc(30 * var(--uvh, 1vh)); } }

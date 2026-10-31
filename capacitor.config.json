@@ -1,0 +1,13 @@
+{
+  "appId": "com.togie.valley",
+  "appName": "Togie Valley",
+  "webDir": "www",
+  "backgroundColor": "#1d2750",
+  "server": {
+    "url": "https://OWNER.github.io/REPO/",
+    "errorPath": "offline.html"
+  },
+  "android": {
+    "backgroundColor": "#1d2750"
+  }
+}

@@ -1,0 +1,11 @@
+# dependencies and build output (CI recreates them)
+node_modules/
+tools/shot/node_modules/
+www/
+android/
+# local screenshots / perf output from tools/shot.js (large; regenerate with node tools/shot.js)
+shots/
+# Windows / misc
+desktop.ini
+Thumbs.db
+*.zip

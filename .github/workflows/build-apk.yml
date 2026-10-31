@@ -1,0 +1,54 @@
+name: Build APK
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: Accept Android licenses
+        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
+      - name: Install Capacitor
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+      - name: Point the shell at GitHub Pages
+        run: |
+          URL="https://${{ github.repository_owner }}.github.io/${GITHUB_REPOSITORY#*/}/"
+          sed -i "s#https://OWNER.github.io/REPO/#${URL}#" capacitor.config.json
+          echo "TOGIE_PAGES_URL=${URL}" >> "$GITHUB_ENV"
+      - name: Build www (copies index.html, css, js, fonts, icons, vendor, manifest, music into www/)
+        run: node tools/build_www.js
+      - name: Add Android project
+        run: npx cap add android
+      - name: Patch Android project (rotation, immersive, keep awake, hw accel, icon)
+        run: node tools/android_patch.js
+      - name: Sync
+        run: npx cap sync android
+      - name: Assemble debug APK
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
+      - name: Name the APK
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk Togie_Valley.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Togie_Valley_apk
+          path: Togie_Valley.apk
+      - name: Publish to Release "latest"
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view latest >/dev/null 2>&1 || gh release create latest --title "Togie Valley (APK mới nhất)" --notes "Bản APK mới nhất. Link tải không đổi."
+          gh release upload latest Togie_Valley.apk --clobber

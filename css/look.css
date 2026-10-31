@@ -1,0 +1,38 @@
+/* Togie Valley - look.css (Round 2 stage 2): appearance editor. Touch targets >= 48px. */
+.lk-wrap { position: fixed; inset: 0; z-index: 400; display: flex; align-items: center; justify-content: center; padding: 10px; box-sizing: border-box; background: rgba(74,47,26,.55); pointer-events: auto; }
+.lk-card { position: relative; width: 100%; max-width: 940px; max-height: 100%; box-sizing: border-box; display: grid; grid-template-columns: minmax(200px, 300px) 1fr; grid-template-rows: auto minmax(0, 1fr) auto; gap: 8px 14px; padding: 12px 16px 14px; background: var(--paper, #fff4d9); border: 3px solid var(--line, #5b3a29); border-radius: 22px; box-shadow: 3px 4px 0 rgba(91,58,41,.32); color: var(--ink, #4a2f1a); font-family: inherit; overflow: hidden; }
+.lk-title { grid-column: 1 / -1; margin: 0; text-align: center; font-size: 22px; font-weight: 800; }
+.lk-left { display: flex; flex-direction: column; align-items: center; min-height: 0; }
+.lk-prev { width: 100%; max-width: 260px; max-height: 100%; aspect-ratio: 336 / 400; object-fit: contain; border-radius: 18px; background: linear-gradient(#cfeefb, #f3f9e4); border: 3px solid var(--line, #5b3a29); touch-action: none;  }
+.lk-hint { font-size: 13px; opacity: .7; margin-top: 2px; }
+.lk-right { display: flex; flex-direction: column; min-height: 0; min-width: 0; }
+.lk-tabs { display: flex; gap: 6px; overflow-x: auto; padding: 2px 2px 8px; -webkit-overflow-scrolling: touch; flex: 0 0 auto; }
+.lk-tab { flex: 0 0 auto; min-height: 48px; min-width: 64px; padding: 0 14px; font: 700 16px var(--font-ui); font-family: inherit; color: var(--ink, #4a2f1a); background: #fff; border: 2px solid var(--line, #5b3a29); border-radius: 14px; cursor: pointer; }
+.lk-tab.on { background: #ffd98a; box-shadow: 0 3px 0 var(--line, #5b3a29); }
+.lk-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 2px 4px 6px; }
+.lk-sec { font-weight: 800; font-size: 15px; margin: 8px 0 6px; }
+.lk-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.lk-chip { min-height: 48px; min-width: 48px; padding: 0 14px; font: 700 15px var(--font-ui); font-family: inherit; color: var(--ink, #4a2f1a); background: #fffdf4; border: 2px solid var(--line, #5b3a29); border-radius: 14px; cursor: pointer; }
+.lk-chip.on { background: #ffd98a; box-shadow: 0 3px 0 var(--line, #5b3a29); }
+.lk-sw { width: 48px; height: 48px; padding: 0; border: 2px solid var(--line, #5b3a29); border-radius: 14px; cursor: pointer; }
+.lk-sw.on { box-shadow: 0 0 0 3px #fff4d9, 0 0 0 6px var(--line, #5b3a29); }
+.lk-presets { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.lk-pre { min-height: 64px; padding: 6px 10px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 4px; font: 700 14px var(--font-ui); font-family: inherit; color: var(--ink, #4a2f1a); background: #fffdf4; border: 2px solid var(--line, #5b3a29); border-radius: 14px; cursor: pointer; text-align: left; }
+.lk-dots { display: flex; gap: 4px; }
+.lk-dots i { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--line, #5b3a29); display: block; }
+.lk-foot { grid-column: 1 / -1; display: flex; gap: 12px; justify-content: center; }
+.lk-btn { min-height: 52px; min-width: 150px; }
+@media (max-width: 700px), (max-aspect-ratio: 1/1) {
+  .lk-card { grid-template-columns: 1fr; grid-template-rows: auto auto minmax(0, 1fr) auto; }
+  .lk-left { flex-direction: row; justify-content: center; }
+  .lk-prev { max-width: 180px; }
+  .lk-hint { display: none; }
+}
+@media (max-height: 460px) {
+  .lk-card { grid-template-columns: minmax(130px, 200px) 1fr; padding: 6px 10px 8px; gap: 4px 10px; }
+  .lk-title { font-size: 17px; }
+  .lk-prev { max-width: 160px; }
+  .lk-left { flex-direction: column; }
+  .lk-btn { min-height: 48px; }
+}
+.lk-name { display: block; margin: 6px auto 0; width: min(240px, 80%); min-height: 36px; padding: 2px 10px; font: 700 16px var(--font-body); text-align: center; color: var(--ink); background: #fff; border: 2px solid var(--ink); border-radius: 12px; }

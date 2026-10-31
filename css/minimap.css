@@ -1,0 +1,11 @@
+/* Togie Valley - minimap.css (Round 3 stage 10): small map under the menu buttons (inside #tv-hr, so it follows the UI scale and never meets the bottom widgets) + big map panel. */
+#ui #tv-minimap { position: relative; display: block; padding: 0; margin: 2px 0 0; overflow: hidden; pointer-events: auto; cursor: pointer; touch-action: manipulation;
+  border: 3px solid var(--line, #5b3a29); border-radius: 24%; background: rgba(255, 248, 230, .5); box-shadow: 0 3px 0 rgba(91, 58, 41, .35); -webkit-tap-highlight-color: transparent; }
+#ui #tv-minimap canvas { display: block; width: 100%; height: 100%; opacity: .86; pointer-events: none; }
+#ui #tv-minimap:active { transform: translateY(2px); box-shadow: 0 1px 0 rgba(91, 58, 41, .35); }
+.mm-big h2 { margin: 0 0 8px; text-align: center; }
+.mm-big .mm-bigc { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; border: 3px solid var(--line, #5b3a29); border-radius: 14px; cursor: pointer; background: #9bd16f; }
+.mm-big .mm-leg { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; justify-content: center; }
+.mm-big .mm-leg-i { display: flex; align-items: center; gap: 4px; font: 700 14px/1.2 var(--font-d, system-ui, sans-serif); color: var(--ink, #5b3a29); }
+.mm-big .mm-leg-i canvas { width: 24px; height: 24px; }
+.mm-big .mm-tip { margin: 8px 0 0; text-align: center; font-size: 13px; opacity: .75; }

@@ -1,0 +1,26 @@
+/* Togie Valley - notebook.css (Stage 12): notebook, goals, kitchen, buff chip, celebration. Uses tokens from ui.css. */
+#tv-buff { position: static; min-height: 40px; padding: 3px 10px 3px 8px; gap: 6px; display: flex; align-items: center; }
+#tv-buff .txt { display: flex; flex-direction: column; line-height: 1.1; }
+#tv-buff b { font-family: var(--font-d); font-size: 13px; font-weight: 700; }
+#tv-buff i { font-style: normal; font-size: 11px; opacity: .75; }
+.nb-ent, .nb-goal { display: flex; gap: 12px; align-items: center; padding: 10px 12px; background: #fffaf0; border: 2.5px solid var(--line); border-radius: 14px; }
+.nb-ent.locked { opacity: .6; }
+.nb-ent .ic, .nb-goal .ic { flex: 0 0 auto; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; }
+.nb-ent .tx, .nb-goal .tx { flex: 1; min-width: 0; font-size: 13px; line-height: 1.4; }
+.nb-ent .tx b, .nb-goal .tx b { display: block; font-family: var(--font-d); font-size: 16px; font-weight: 700; }
+.nb-ent .tx small, .nb-goal .tx small { display: block; opacity: .7; }
+.nb-ent .tx span, .nb-goal .tx span { display: block; }
+.nb-goal.done { background: #eef8d8; }
+.nb-goal .tv-bar { margin: 4px 0 2px; height: 12px; }
+/* kitchen detail (Kit.panel .kp-cook) */
+.kp-cook .ings { display: flex; flex-wrap: wrap; gap: 4px 10px; margin: 4px 0; font-size: 13px; }
+.kp-cook .ing { display: inline-flex; align-items: center; gap: 3px; font-weight: 700; color: #b4472f; }
+.kp-cook .ing.ok { color: #3f7a2f; }
+.tv-celebrate { position: relative; overflow: hidden; text-align: center; padding: 18px 12px 12px; }
+.tv-celebrate p { margin: 6px 0 14px; line-height: 1.5; }
+.tv-celebrate .big { display: inline-block; animation: nb-pop .7s var(--ease-out, ease-out) both; }
+.tv-celebrate .burst { position: absolute; inset: 0; pointer-events: none; }
+.tv-celebrate .burst i { position: absolute; top: -12px; width: 9px; height: 14px; border-radius: 3px; opacity: 0; animation: nb-fall 3s linear infinite; }
+@keyframes nb-pop { 0% { transform: scale(.3); } 70% { transform: scale(1.18); } 100% { transform: scale(1); } }
+@keyframes nb-fall { 0% { transform: translateY(0) rotate(0); opacity: 1; } 100% { transform: translateY(420px) rotate(520deg); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .tv-celebrate .burst i, .tv-celebrate .big { animation: none; } .tv-celebrate .burst { display: none; } }

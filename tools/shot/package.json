@@ -1,0 +1,8 @@
+{
+  "name": "togie-valley-shot",
+  "private": true,
+  "description": "Screenshot/perf harness deps only (tools/shot.js). Uses the installed Edge/Chrome, never downloads a browser.",
+  "dependencies": {
+    "playwright-core": "1.48.2"
+  }
+}
